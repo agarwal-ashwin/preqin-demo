@@ -1,5 +1,5 @@
 export const investorsListColumns = [
-  { field: "firmID", headerName: "FirmId", flex: 0.5 },
+  { field: "firmID", headerName: "FirmId", flex: 0.5, type: 'number' },
   { field: "firmName", headerName: "Firm Name", flex: 1 },
   {
     field: "firmType",
@@ -11,8 +11,6 @@ export const investorsListColumns = [
     field: "yearEst",
     headerName: "Date Added",
     type: "number",
-    headerAlign: "left",
-    align: "left",
   },
   {
     field: "address",
@@ -88,6 +86,6 @@ export const investorColumns = [
   {
     field: "managerExperience",
     headerName: "Experience",
-    type: "number",
+    type: "string",
   },
 ];
