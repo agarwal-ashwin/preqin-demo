@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import { investorsListColumns } from "../../constants/constants";
 import useAxios from "../../hooks/useAxios";
 import { tokens } from "../../theme/theme";
+import { addIndexToJsonArray } from "../../utils/utils";
 
 const InvestorsList = () => {
   const theme = useTheme();
@@ -25,10 +26,7 @@ const InvestorsList = () => {
 
   useEffect(() => {
     if (response !== null) {
-      const updatedResponse = response.data.map((item, index) => ({
-        ...item,
-        id: index + 1,
-      }));
+      const updatedResponse = addIndexToJsonArray(response.data);
       setData(updatedResponse);
     }
   }, [response]);
